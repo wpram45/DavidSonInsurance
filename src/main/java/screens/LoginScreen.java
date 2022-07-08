@@ -107,7 +107,7 @@ addActionListeners();
                 //if login success
                 if(dbOperation.loginOperation(userName,passwordMD5)==true){
 
-                    System.out.println("login success");
+                    //System.out.println("login success");
 
                     MainNavigator.navigateToDashboard();
 
