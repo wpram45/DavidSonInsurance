@@ -34,7 +34,7 @@ public class DrawGraphs extends JDialog {
 
 
         //make visible false after
-        setVisible(true);
+        setVisible(false);
 
 
         addListeners();
