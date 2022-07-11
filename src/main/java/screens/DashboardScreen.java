@@ -4,16 +4,17 @@ import utils.SizeUtils;
 
 import javax.swing.*;
 import java.awt.*;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
+
 
 public class DashboardScreen extends JDialog {
     private JPanel panelMain;
-    private JButton benefits;
-    private JButton showRateDataButton1;
-    private JButton showBusinessRulesDataButton;
-    private JButton showPlanData;
-    private JLabel headerText;
+    protected   JButton benefits;
+    protected JButton showRateDataButton1;
+    protected JButton showBusinessRulesDataButton;
+    protected JButton showPlanData;
+    protected JLabel headerText;
+
+    Locale locale =new Locale();
     SizeUtils sizeUtil=new SizeUtils();
     public DashboardScreen() {
 
@@ -26,67 +27,19 @@ public class DashboardScreen extends JDialog {
         this.setSize(defaultSize);
         setLocationRelativeTo(null);
         this.setResizable(false);
-       setVisible(false);
+        setVisible(false);
 
-       addListeners();
+       Listeners.addListenersDashboard(this);
 
-
-
-
-    }
-
-    public void setLocalization(){
+        Locale.dashboardScreen=this;
 
 
 
-
-
-     if(LoginScreen.currentLanguage.get("lang").equals("tr")){
-         benefits.setText(LoginScreen.currentLanguage.get("Show benefits cost sharing data"));
-         showRateDataButton1.setText(LoginScreen.currentLanguage.get("Show rate data"));
-         showBusinessRulesDataButton.setText(LoginScreen.currentLanguage.get("Show business rules data"));
-         showPlanData.setText(LoginScreen.currentLanguage.get("Show plan attributes data"));
-         headerText.setText(LoginScreen.currentLanguage.get("Welcome Admin"));
-     }
-
+        locale.setLocalizationDashboard();
 
 
     }
 
-    private void addListeners(){
-        benefits.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent actionEvent) {
-
-                        MainNavigator.navigateToShowTable("benefits_cost_sharing");
-            }
-        });
-
-        showBusinessRulesDataButton.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent actionEvent) {
-                MainNavigator.navigateToShowTable("business_rules");
-
-            }
-        });
-
-        showPlanData.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent actionEvent) {
-
-                MainNavigator.navigateToShowTable("plan_attributes");
-            }
-        });
-
-        showRateDataButton1.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent actionEvent) {
-                MainNavigator.navigateToShowTable("rate");
-
-            }
-        });
-
-    }
 
 
 }

@@ -1,12 +1,18 @@
 package utils;
 
+
+import lombok.Getter;
 import java.util.HashMap;
+
+
+
+@Getter
 
 public class Localization {
 
-    HashMap<String,String> turkish=new HashMap<String,String>();
+    final HashMap<String,String> turkish=new HashMap<String,String>();
 
-    HashMap<String,String> english=new HashMap<String,String>();
+   final HashMap<String,String> english=new HashMap<String,String>();
     public Localization(){
         //fill hashmap corrospending values
 
@@ -24,10 +30,10 @@ public class Localization {
         turkish.put("UsersbyExpirationDate","Çizgi Grafiği Çiz(Son Kullanma Tarihine Göre Kullanıcılar)");
 
         turkish.put("NumberOfCustomersByState","Pasta Grafiği Çiz (Eyalete Göre Müşteri Sayısı)");
-
         turkish.put("NewPlansSelledByDate","Zaman Serileri Grafiği Çiz (Tarihe Göre Satılan Yeni Planlar)");
         turkish.put("NumberofCustomersByMarketCoverage","Pasta Grafiği Çiz (Piyasa Kapsamına Göre Müşteri Sayısı)");
 
+        //default values of english map dictionary
 
 
         english.put("username","username");
@@ -43,11 +49,4 @@ public class Localization {
 
     }
 
-    public HashMap<String, String> getTurkish() {
-        return turkish;
-    }
-
-    public HashMap<String, String> getEnglish() {
-        return english;
-    }
 }

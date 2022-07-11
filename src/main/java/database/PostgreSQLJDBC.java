@@ -113,6 +113,8 @@ public class PostgreSQLJDBC {
 
     public  static  JDBCXYDataset DrawLineChartByExpirationDate(){
 
+
+
         String url="jdbc:postgresql://localhost:5432/davidsonbank";
         String username="postgres";
         String password="*123admin*";
@@ -158,6 +160,8 @@ public class PostgreSQLJDBC {
 
     public static  DefaultPieDataset numberOfCustomersByMarketCoverage(){
 
+        dataset=new DefaultPieDataset();
+
         String url="jdbc:postgresql://localhost:5432/davidsonbank";
         String username="postgres";
         String password="*123admin*";
@@ -191,6 +195,8 @@ public class PostgreSQLJDBC {
 
     }
     public static DefaultPieDataset numberOfCustomersByStatePie(){
+
+        dataset=new DefaultPieDataset();
         String url="jdbc:postgresql://localhost:5432/davidsonbank";
         String username="postgres";
         String password="*123admin*";

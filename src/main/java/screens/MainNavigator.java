@@ -3,14 +3,17 @@ package screens;
 
 import javax.swing.*;
 import java.awt.*;
+
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+
+
 
 
 public class MainNavigator extends JFrame implements ActionListener
 {
 
-    static  final ShowTable showTable=new ShowTable();
+
     static final    LoginScreen login=new LoginScreen(null);
 
     static  final    DashboardScreen dashboardScreen=new DashboardScreen();
@@ -36,31 +39,11 @@ public class MainNavigator extends JFrame implements ActionListener
 
     }
 
-    public static   void navigateToDashboard(){
-
-        //hide login screen
-        //show dashboard screen
-        login.setVisible(false);
-        dashboardScreen.setVisible(true);
-        dashboardScreen.setLocalization();
-
-
-    }
-
-    public static   void navigateToShowTable(String tableName){
-
-
-        //show showtable screen
-        showTable.setTableName(tableName);
-
-        showTable.setVisible(true);
 
 
 
 
-    }
-
-    public   void   actionPerformed(ActionEvent e) {
+   public   void   actionPerformed(ActionEvent e) {
         card.next(c);
     }
 
