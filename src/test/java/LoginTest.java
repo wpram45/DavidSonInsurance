@@ -1,3 +1,4 @@
+import database.LoginOperation;
 import database.PostgreSQLJDBC;
 import org.apache.commons.codec.digest.DigestUtils;
 import org.junit.jupiter.api.AfterEach;
@@ -13,6 +14,8 @@ public class LoginTest {
     static  String[] passwords;
 
     PostgreSQLJDBC postgreSQLJDBC=new PostgreSQLJDBC();
+
+    LoginOperation loginOperation=new LoginOperation();
 
     static  boolean[] expectedOutcomes;
 
@@ -49,7 +52,7 @@ public class LoginTest {
 
     void isLoginValid(){
 
-        assertEquals(expected, postgreSQLJDBC.loginOperation(username,password));
+        assertEquals(expected, loginOperation.loginOperation(username,password));
     }
 
 }

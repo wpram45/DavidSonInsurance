@@ -1,17 +1,9 @@
 package screens;
 
-import database.PostgreSQLJDBC;
-import org.jfree.chart.ChartFactory;
-import org.jfree.chart.ChartUtils;
-import org.jfree.chart.JFreeChart;
 import utils.SizeUtils;
 
 import javax.swing.*;
 import java.awt.*;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
-import java.io.File;
-import java.io.IOException;
 
 public class DrawGraphs extends JDialog {
     public JButton drawPieChartNumberButton;

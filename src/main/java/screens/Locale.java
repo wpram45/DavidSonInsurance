@@ -1,12 +1,16 @@
 package screens;
 
 
+import screens.DashboardScreen;
+import screens.DrawGraphs;
+import screens.LoginScreen;
+
 public class Locale {
 
 
-    static   DashboardScreen dashboardScreen;
+    static DashboardScreen dashboardScreen;
 
-    static  DrawGraphs drawGraphs;
+    static DrawGraphs drawGraphs;
 
     public    void setLocalizationDashboard(){
 

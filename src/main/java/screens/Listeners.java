@@ -1,6 +1,7 @@
 package screens;
 
-import database.PostgreSQLJDBC;
+import database.LoginOperation;
+import database.DrawDataSets;
 import org.apache.commons.codec.digest.DigestUtils;
 import org.jfree.chart.ChartFactory;
 import org.jfree.chart.ChartUtils;
@@ -52,7 +53,9 @@ public class Listeners {
             public void actionPerformed(ActionEvent actionEvent) {
 
 
-                PostgreSQLJDBC dbOperation=new PostgreSQLJDBC();
+
+
+                LoginOperation loginOperation=new LoginOperation();
 
                 // dbOperation.establishConnection();
 
@@ -65,7 +68,7 @@ public class Listeners {
 
 
                 //if login success
-                if(dbOperation.loginOperation(userName,passwordMD5)==true){
+                if(loginOperation.loginOperation(userName,passwordMD5)==true){
 
                     //System.out.println("login success");
 
@@ -149,7 +152,7 @@ public class Listeners {
             public void actionPerformed(ActionEvent actionEvent) {
 
                 JFreeChart lineChart = ChartFactory.createTimeSeriesChart(
-                        "New Plans Selled By Date", "Date", "New Plans Selled", PostgreSQLJDBC.DrawTimeSeriesBySellDate(), true, true, false);
+                        "New Plans Selled By Date", "Date", "New Plans Selled", DrawDataSets.DrawTimeSeriesBySellDate(), true, true, false);
 
 
 
@@ -171,7 +174,7 @@ public class Listeners {
 
 
                 JFreeChart lineChart = ChartFactory.createTimeSeriesChart(
-                        "Insurance Expiration Date & Customer Count Time Series", "Expiration Date", "Customer Count", PostgreSQLJDBC.DrawLineChartByExpirationDate(), true, true, false);
+                        "Insurance Expiration Date & Customer Count Time Series", "Expiration Date", "Customer Count", DrawDataSets.DrawLineChartByExpirationDate(), true, true, false);
 
 
 
@@ -191,7 +194,7 @@ public class Listeners {
             @Override
             public void actionPerformed(ActionEvent actionEvent) {
 
-                JFreeChart pieChart = ChartFactory.createPieChart("Number Of Customers By Market Coverage ", PostgreSQLJDBC.numberOfCustomersByMarketCoverage(),true,true,false);
+                JFreeChart pieChart = ChartFactory.createPieChart("Number Of Customers By Market Coverage ", DrawDataSets.numberOfCustomersByMarketCoverage(),true,true,false);
 
 
 
@@ -213,7 +216,7 @@ public class Listeners {
             @Override
             public void actionPerformed(ActionEvent actionEvent) {
 
-                JFreeChart pieChart = ChartFactory.createPieChart("Number Of Customers By State", PostgreSQLJDBC.numberOfCustomersByStatePie(),true,true,false);
+                JFreeChart pieChart = ChartFactory.createPieChart("Number Of Customers By State", DrawDataSets.numberOfCustomersByStatePie(),true,true,false);
 
 
 

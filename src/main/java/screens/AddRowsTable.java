@@ -1,6 +1,7 @@
 package screens;
 
-import database.PostgreSQLJDBC;
+
+import database.SelectAllFromTable;
 
 import javax.swing.*;
 import javax.swing.table.DefaultTableModel;
@@ -21,7 +22,7 @@ public class AddRowsTable {
     protected static void addRowsTablePlanAttributes(String tableName) {
 
         //152 column
-        ResultSet rs = PostgreSQLJDBC.selectAllFromTable(tableName);
+        ResultSet rs = SelectAllFromTable.selectAllFromTable(tableName);
 
         rows = new Object[columns_plan_attributes.length];
 
@@ -59,7 +60,7 @@ public class AddRowsTable {
 
     protected static void addRowsTableRate(String tableName) {
 
-        ResultSet rs = PostgreSQLJDBC.selectAllFromTable(tableName);
+        ResultSet rs = SelectAllFromTable.selectAllFromTable(tableName);
 
         rows = new Object[columns_rate.length];
 
@@ -97,7 +98,7 @@ public class AddRowsTable {
 
     protected static void addRowsTableBusinessRules(String tableName) {
 
-        ResultSet rs = PostgreSQLJDBC.selectAllFromTable(tableName);
+        ResultSet rs = SelectAllFromTable.selectAllFromTable(tableName);
 
         rows = new Object[columns_business_rules.length];
 
@@ -133,7 +134,7 @@ public class AddRowsTable {
 
     protected static void addRowsToTableBenefits_cost_sharing(String tableName) {
 
-        ResultSet rs = PostgreSQLJDBC.selectAllFromTable(tableName);
+        ResultSet rs = SelectAllFromTable.selectAllFromTable(tableName);
         rows = new Object[columns_benefits_cost_sharing.length];
 
         try {
